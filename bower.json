@@ -1,0 +1,21 @@
+{
+  "name": "react-basics",
+  "description": "a project that will familiarize myself with react",
+  "main": "index.js",
+  "license": "ISC",
+  "keywords": [
+    "react"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.4.2",
+    "babel": "^5.8.38"
+  }
+}
