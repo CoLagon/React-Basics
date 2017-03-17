@@ -173,10 +173,14 @@ var Application = React.createClass({
   render: function() {
     return (
       <div className="scoreboard">
-        <Header title={this.props.title} players={this.state.players} />
+        <Header players={this.state.players} />
         <div className="players">
           {this.state.players.map(function(player, index) {
-            return <Player onRemove={function() {this.onRemovePlayer(index)}.bind(this)} onScoreChange={function(delta) {this.onScoreChange(index,delta)}.bind(this)} key={player.id} name={player.name} score={player.score} />
+            return <Player onRemove={function() {this.onRemovePlayer(index)}.bind(this)}
+                           onScoreChange={function(delta) {this.onScoreChange(index,delta)}.bind(this)}
+                           key={player.id}
+                           name={player.name}
+                           score={player.score} />
           }.bind(this))}
         </div>
         <AddPlayer onAdd={this.onPlayerAdd}/>
@@ -187,5 +191,17 @@ var Application = React.createClass({
 
 
 /********************END OF APP******************************************************/
+/********************MY NOTES*******************************************************
+
+<AddPlayer onAdd={this.onPlayerAdd} />
+
+-AddPlayer is the object or function we are rendering or calling upon
+
+-onAdd is the prop/props we are passing to it
+
+-this.onPlayerAdd is the props theat AddPlayer can now use inside it's code block/scope
+*********************END OF NOTES********************************************************/
+
+
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
